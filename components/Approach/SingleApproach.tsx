@@ -13,10 +13,10 @@ const SingleApproach = ({ approach }: { approach: Feature }) => {
         className="mb-2 lg:mb-5"
       />
 
-      <h3 className="mb-2 text-base font-bold text-black dark:text-white xs:text-lg sm:text-2xl lg:mb-5 lg:text-xl xl:text-2xl">
+      <h3 className="mb-2 text-base font-bold text-black dark:text-white xs:text-lg sm:text-2xl lg:mb-2 lg:text-lg xl:text-2xl">
         {title}
       </h3>
-      <p className="pr-[10px] text-sm font-medium leading-relaxed text-body-color lg:text-base">
+      <p className="pr-[10px] text-xs font-medium leading-relaxed text-body-color lg:text-sm">
         {paragraph}
       </p>
     </div>

@@ -1,5 +1,26 @@
 import { Feature } from "@/types/feature";
-import { Testimonial } from "@/types/testimonial";
+import { IWork, Testimonial } from "@/types/testimonial";
+import { Blog } from "@/types/blog";
+
+
+export const clientData:IWork[]= [
+    {
+      "name": "Projects Delivered",
+      "amount": 200
+    },
+    {
+      "name": "Tech experts On-board",
+      "amount": 100
+    },
+    {
+      "name": "Employees",
+      "amount": 100
+    },
+    {
+      "name": "Satisfied Customers",
+      "amount": 500
+    }
+  ]
 
 export const approachData: Feature[] = [
   {
@@ -7,42 +28,43 @@ export const approachData: Feature[] = [
     icon2: "/images/approach/innovation.png",
     title: "Innovation at the Core",
     paragraph:
-      "Pioneering solutions that push technological boundaries, driving progress and competitive advantage.",
+      "Creating innovative solutions that advance technology, boost competitiveness, and prioritize quality assurance."
   },
   {
     id: 1,
     icon2: "/images/approach/synergy.png",
     title: "Power of Synergy",
     paragraph:
-      "Embracing teamwork and diverse perspectives, we collaborate to bring the best to our clients.",
+      "Embracing teamwork and diverse perspectives, we collaborate to bring the best to our clients, while promoting inclusivity and diversity within our team."
   },
   {
     id: 1,
     icon2: "/images/approach/customer-centric.png",
     title: "Customer-Centric Philosophy",
     paragraph:
-      "Placing our clients' needs at the forefront, we craft solutions that align with their goals.",
+      "Placing our clients' needs at the forefront, we craft solutions that align with their goals and educate them on industry insights and best practices."
   },
   {
     id: 1,
     icon2: "/images/approach/ethics.png",
-    title: "Upholding Ethics",
+    title: "Upholding Ethics ",
     paragraph:
-      "Honesty, transparency, and ethical practices are the cornerstones of our company culture.",
+      " Honesty, transparency, ethical practices, and a strong commitment to data security and privacy are the cornerstones of our company culture."
   },
   {
     id: 1,
     icon2: "/images/approach/reliability.png",
     title: "Unwavering Reliability",
     paragraph:
-      "Building software solutions that stand the test of time, providing consistent performance.",
+      "Building robust, high-performing software that remains adaptable to changing technologies and market demands, while ensuring top-notch quality assurance."
   },
   {
     id: 1,
     icon2: "/images/approach/sustainability.png",
     title: "Driving Sustainability",
     paragraph:
-      "We commit to environmentally conscious practices, contributing positively to our world.",
+      
+"Aligning with our core mission of providing technological solutions for a more sustainable future, benefiting our customers and community."
   },
 ];
 
@@ -120,3 +142,75 @@ export const servicesData: Feature[] = [
       "Gain expert insights and guidance with our Software Consultation services. Navigate complex technology decisions and optimize existing systems for enhanced efficiency.",
   },
 ];
+
+export const blogs: Blog[] = [
+  {
+    id: 1,
+    title: "Hello",
+     data: [
+        { heading:"Hello1",paragraph:"para"}
+    ],
+    image:"/images/blog/blog-01.jpg",
+    // data: {
+    //     para1: "loream40",
+    //     image1:"/images/blog/blog-01.jpg",
+    //     para2: "",
+    //     image2:"",
+    //     para3: "",
+    //     image3:"",
+    // },
+    // image: "",
+    author: {
+      name: "Ehtsham Aziz",
+      image: "/images/blog/author-01.png",
+      designation:""
+    },
+    publishDate:"" 
+  },
+    {
+    id: 2,
+    title: "hello2",
+    data: [
+        { heading:"Hello2",paragraph:"para"}
+      ],
+    image:"/images/blog/blog-02.jpg",
+    //   data: {
+    //     para1: "lorem60",
+    //     image1:"/images/blog/blog-02.jpg",
+    //     para2: "",
+    //     image2:"",
+    //     para3: "",
+    //     image3:"",
+    // },
+    // image: "",
+    author: {
+      name: "Humza Irfan",
+      image: "/images/blog/author-02.png",
+      designation:""
+    },
+    publishDate:"" 
+  },
+      {
+    id: 3,
+        title: "hello3",
+     data: [
+        { heading:"Hello3",paragraph:"para"}
+        ],
+     image:"/images/blog/blog-03.jpg",
+    // data: {
+    //     para1: "lorem50",
+    //     image1:"/images/blog/blog-03.jpg",
+    //     para2: "",
+    //     image2:"",
+    //     para3: "",
+    //     image3:"",
+    // },
+    // image: "",
+    author: {
+      name: "Sardar Waqas",
+      image: "/images/blog/author-03.png",
+      designation:""
+    },
+    publishDate:"" 
+ },
+] 

@@ -1,24 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiMail, FiPhoneCall } from "react-icons/fi";
 
 const Footer = () => {
   return (
     <>
       <footer
-        className="wow fadeInUp relative z-10 bg-primary bg-opacity-5 pt-16 md:pt-20 lg:pt-24"
+        className="wow fadeInUp relative z-10 bg-primary bg-opacity-5 pt-16 md:pt-16 lg:pt-16"
         data-wow-delay=".1s"
       >
         <div className="container">
           <div className="flex flex-wrap sm:flex-nowrap">
-            <div className="w-full px-4 sm:w-auto sm:basis-[50%]">
-              <div className="mb-12 flex flex-col items-center text-center sm:items-start sm:text-left lg:mb-16">
-                <Link href="/" className="mb-8 inline-block text-5xl">
-                  HexaSynergy
+            <div className="w-full  px-4 sm:w-auto sm:basis-[30%]">
+              <div className="mb-12 flex flex-col items-center  text-center sm:items-center sm:text-left lg:mb-16">
+                <Link href="/" className="mb-8 inline-block text-lg">
+                  <Image
+                    src="/images/logo/logo2.png"
+                    alt="logo pic"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
-                <p className="mx-4 mb-9 text-base font-medium leading-relaxed text-body-color sm:ml-0 sm:mr-2 md:mr-4 lg:mr-12">
+                {/* <p className="mx-4 mb-9 text-base font-medium leading-relaxed text-body-color sm:ml-0 sm:mr-2 md:mr-4 lg:mr-12">
                   Unlock the future of software solutions with HexaSynergy. Join
                   our journey to innovation and excellence.
-                </p>
+                </p> */}
                 <div className="flex items-center">
                   <a
                     href="/"
@@ -142,6 +148,42 @@ const Footer = () => {
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       Refund Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="w-full px-4 sm:w-auto sm:flex-1">
+              <div className="mb-12 text-center sm:text-left lg:mb-16">
+                <h2 className="mb-6 text-2xl font-bold text-black dark:text-white sm:mb-10">
+                  Contact Info
+                </h2>
+                <ul>
+                  <li>
+                    <a
+                      href="/"
+                      className="mb-4 flex items-center text-base font-medium text-body-color hover:text-primary"
+                    >
+                      <FiMail />
+                      <span className="ml-2">support@hexasynergy.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                      className="mb-4 flex items-center  text-base font-medium text-body-color hover:text-primary"
+                    >
+                      <FiPhoneCall />
+                      <span className="ml-2">+92 333510946</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                    >
+                      Office# 14, first floor Mujahid plaza, BlueArea Islamabad.
                     </a>
                   </li>
                 </ul>

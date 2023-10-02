@@ -6,3 +6,8 @@ export type Testimonial = {
   image: string;
   star: number;
 };
+
+export interface IWork {
+  name: string;
+  amount: number;
+}

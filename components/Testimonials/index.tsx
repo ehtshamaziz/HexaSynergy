@@ -1,11 +1,59 @@
+"use client";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "@/data";
+import CountUp from "react-countup";
+import { IWork } from "@/types/testimonial";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { clientData } from "@/data";
+interface CounterProps {
+  work: IWork;
+  index: number;
+}
+
+const Counter = ({ work, index }: CounterProps) => {
+  const [counter, setCounter] = useState(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        setCounter(true);
+      }, 500);
+    }
+  }, [inView]);
+
+  return (
+    <div
+      key={`homepage-work-${index}`}
+      className="flex flex-1 flex-col items-center justify-center "
+    >
+      <motion.p className="text-gray-dark-mid mb-2 text-4xl font-bold">
+        {counter ? <CountUp start={0} end={work.amount} duration={2.5} /> : 0}+
+      </motion.p>
+      <p ref={ref} className="text-gray-light text-base font-semibold">
+        {work.name}
+      </p>
+    </div>
+  );
+};
 
 const Testimonials = () => {
   return (
     <section className="relative z-10 bg-white py-16 dark:bg-black md:py-20 lg:py-28">
       <div className="container">
+        <div className="mb-10 flex flex-col rounded-3xl bg-primary bg-opacity-5 p-10 xl:flex-row">
+          {clientData &&
+            typeof clientData == "object" &&
+            clientData.map((item, index) => (
+              <Counter key={index} work={item} index={index} />
+            ))}
+        </div>
         <SectionTitle
           title="What Our Clients Say"
           paragraph="Hear from our clients about their journey with HexaSynergy and the remarkable outcomes achieved through our innovative software solutions."
