@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="h-[80vh] w-full bg-cover bg-center bg-no-repeat px-20 lgCustom:h-screen lgCustom:bg-hero-bg"
+      className="h-[80vh] w-full bg-cover bg-center bg-no-repeat px-20 smCustom:px-4 lgCustom:h-screen lgCustom:bg-hero-bg"
     >
       <div className="container flex h-full w-full items-center gap-10 lgCustom:justify-center">
         <div className="basis-1/2 lgCustom:basis-auto lgCustom:text-center">
