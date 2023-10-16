@@ -1,14 +1,74 @@
+"use client";
+
+import { useState } from "react";
+import Swal from "sweetalert2";
+import ClipLoader from "react-spinners/RingLoader";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((old) => ({ ...old, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_8ide6t5",
+        "template_1rtro99",
+        {
+          from_name: form.name,
+          to_name: "Hexa Synergy",
+          from_email: form.email,
+          to_email: "hexasynergy.co@gmail.com",
+          message: form.message,
+        },
+        "JeCDhDLifTX7WpsSX"
+      );
+      setLoading(false);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent Successfully",
+        html:
+          "Hi <b>" +
+          form.name.split(" ")[0] +
+          ",</b> Thanks for reaching out! We've got your message and our team will be in touch soon.",
+        showCloseButton: true,
+      });
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Send Message",
+        text: "Sorry, something went wrong while sending your message. Please try again later.",
+        showCloseButton: true,
+      });
+    }
+  };
+
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div
-              className="wow fadeInUp relative mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-primary/10 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
-              data-wow-delay=".15s
-              "
-            >
+            <div className="relative mb-12 rounded-md border border-[#eee] bg-primary/[3%] py-11 px-8 dark:border-0 dark:bg-primary/10 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-left sm:text-3xl lg:text-2xl xl:text-3xl">
                 Connect with Us to Transform Your Digital Journey
               </h2>
@@ -16,7 +76,7 @@ const Contact = () => {
                 Get in touch for questions or projects. Our support team is
                 ready to assist promptly.
               </p>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -29,6 +89,9 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Enter your name"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
                     </div>
@@ -44,6 +107,9 @@ const Contact = () => {
                       <input
                         type="email"
                         placeholder="Enter your email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
                     </div>
@@ -60,13 +126,30 @@ const Contact = () => {
                         name="message"
                         rows={5}
                         placeholder="Enter your Message"
+                        value={form.message}
+                        onChange={handleChange}
                         className="w-full resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                      ></textarea>
+                      />
                     </div>
                   </div>
                   <div className="flex w-full justify-center px-4 sm:justify-start">
-                    <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-                      Submit
+                    <button
+                      className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
+                      type="submit"
+                    >
+                      {loading ? (
+                        <span className="flex items-center gap-4">
+                          Submitting...
+                          <ClipLoader
+                            color="#fff"
+                            size={30}
+                            aria-label="Loading Spinner"
+                            data-testid="loader"
+                          />
+                        </span>
+                      ) : (
+                        "Submit"
+                      )}
                     </button>
                   </div>
                 </div>

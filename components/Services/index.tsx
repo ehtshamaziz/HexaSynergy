@@ -9,7 +9,7 @@ const Services = () => {
         <div className="container">
           <SectionTitle
             title="Our Services"
-            paragraph="HexaSynergy offers a diverse range of software solutions tailored to your business needs. We prioritize innovation and excellence, crafting digital experiences that empower growth and success."
+            paragraph="Hexa Synergy offers a diverse range of software solutions tailored to your business needs. We prioritize innovation and excellence, crafting digital experiences that empower growth and success."
             center
           />
 
