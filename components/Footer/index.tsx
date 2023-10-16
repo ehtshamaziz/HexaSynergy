@@ -53,20 +53,28 @@ const Footer = () => {
                 <ul>
                   <li>
                     <a
+                      href="/"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="/about"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       About
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="/blog"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       Blog
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a
                       href="/contact"

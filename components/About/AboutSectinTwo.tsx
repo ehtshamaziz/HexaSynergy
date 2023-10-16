@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 
-const AboutSectionOne = () => {
+const AboutSectionTwo = () => {
   return (
-    <section id="about" className="bg-primary/[.03] py-16 md:py-20 lg:py-28">
+    <section id="about" className="py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
-          <div className="w-full pl-4 pr-4 lg:w-[55%] lg:pr-10 xl:pr-24 mb-16 lg:mb-0">
+          <div className="mb-16 w-full pl-4 pr-4 lg:mb-0 lg:w-[55%] lg:pr-10 xl:pr-24">
             <div className="mx-auto mb-14 w-full lg:mx-0">
               <h2 className="mb-4 text-5xl font-bold !leading-tight text-black dark:text-white xlCustom:text-4xl">
                 Unveiling the Vision Behind{" "}
@@ -20,12 +20,12 @@ const AboutSectionOne = () => {
                 empowers businesses to thrive in the digital age.
               </p>
             </div>
-            <div className="flex gap-10 smCustom:flex-col">
+            <div className="flex flex-col gap-10">
               <div className="flex flex-1 flex-col items-start">
-                <p className="bg-primary py-1 px-2 text-sm uppercase text-white xlCustom:text-xs">
+                <p className="text-base font-semibold uppercase text-primary xlCustom:text-sm">
                   Our Resolve in Practice
                 </p>
-                <h3 className="mt-3 mb-4 text-4xl font-semibold uppercase xlCustom:text-3xl">
+                <h3 className="mt-2 mb-4 text-4xl font-semibold uppercase xlCustom:text-3xl">
                   Our Mission
                 </h3>
                 <p className="text-justify text-base text-body-color">
@@ -38,7 +38,7 @@ const AboutSectionOne = () => {
                 </p>
               </div>
               <div className="flex flex-1 flex-col items-start">
-                <p className="bg-primary py-1 px-2 text-sm uppercase text-white xlCustom:text-xs">
+                <p className="text-base font-semibold uppercase text-primary xlCustom:text-sm">
                   The Future We Imagine
                 </p>
                 <h3 className="mt-3 mb-4 text-4xl font-semibold uppercase xlCustom:text-3xl">
@@ -95,4 +95,4 @@ const AboutSectionOne = () => {
   );
 };
 
-export default AboutSectionOne;
+export default AboutSectionTwo;

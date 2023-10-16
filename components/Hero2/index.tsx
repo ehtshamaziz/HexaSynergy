@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -23,12 +24,18 @@ const Hero = () => {
             us on a transformative journey.
           </p>
           <div className="flex basis-1/2 gap-4 lgCustom:justify-center">
-            <button className="rounded bg-primary px-4 py-2 text-base text-white">
+            <Link
+              href="/contact"
+              className="rounded bg-primary px-4 py-2 text-base text-white hover:bg-[#536cdb] transition-all"
+            >
               Get Started
-            </button>
-            <button className="rounded border border-primary px-4 py-2 text-base text-primary lgCustom:border-0 lgCustom:bg-white">
+            </Link>
+            <Link
+              href="/about"
+              className="rounded border border-primary px-4 py-2 text-base text-primary hover:bg-[#536cdb] hover:text-white lgCustom:border-0 lgCustom:bg-white transition-all"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
         <div className="relative flex flex-1 items-center justify-center lgCustom:hidden">
