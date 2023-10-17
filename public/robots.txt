@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.hexasynergy.com
+
+# Sitemaps
+Sitemap: https://www.hexasynergy.com/sitemap.xml

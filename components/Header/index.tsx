@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent ${
+      className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent lgCustom:bg-white/10 dark:lgCustom:bg-black/30 backdrop-blur-sm ${
         sticky
           ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm !transition dark:!bg-primary dark:!bg-opacity-20"
           : "absolute"
@@ -35,18 +35,18 @@ const Header = () => {
     >
       <div className="container">
         <div className="relative -mx-4 flex items-center justify-between">
-          <div className="px-4 xl:mr-12">
+          <div className="px-4 mdCustom:px-0 xl:mr-12">
             <Link href="/" className={`header-logo block w-full text-2xl `}>
               <Image
                 src="/images/logo/logo.png"
                 width={600}
                 height={400}
                 alt=""
-                className="h-auto w-[13rem] max-w-none"
+                className="h-auto w-[13rem] max-w-none mdCustom:w-[11rem]"
               />
             </Link>
           </div>
-          <div className="flex w-full items-center justify-between px-4">
+          <div className="flex w-full items-center justify-between mdCustom:justify-end px-4 mdCustom:px-0 gap-2">
             <div>
               <button
                 onClick={navbarToggleHandler}
@@ -55,19 +55,19 @@ const Header = () => {
                 className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
               >
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
+                  className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 dark:bg-white ${
                     navbarOpen ? " top-[7px] rotate-45" : " "
-                  }`}
+                  } bg-black`}
                 />
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
+                  className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 dark:bg-white ${
                     navbarOpen ? "opacity-0 " : " "
-                  }`}
+                  } bg-black`}
                 />
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
+                  className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 dark:bg-white ${
                     navbarOpen ? " top-[-8px] -rotate-45" : " "
-                  }`}
+                  } bg-black`}
                 />
               </button>
               <nav
@@ -94,10 +94,8 @@ const Header = () => {
                 </ul>
               </nav>
             </div>
-            <div className="flex items-center justify-end pr-16 lg:pr-0">
-              <div>
-                <ThemeToggler />
-              </div>
+            <div className="flex items-center justify-end pr-20 lg:pr-0">
+                <ThemeToggler sticky={sticky} />
             </div>
           </div>
         </div>

@@ -7,9 +7,9 @@ import { Social } from "@/types/socail";
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const socialArray: Social[] = [
-  { id: 1, name: "Instagram", href: "/", logo: <FaInstagram /> },
+  { id: 1, name: "Instagram", href: "https://www.instagram.com/hexasynergyofficial/", logo: <FaInstagram /> },
   { id: 2, name: "Twitter", href: "/", logo: <FaTwitter /> },
-  { id: 3, name: "LinkedIn", href: "/", logo: <FaLinkedin /> },
+  { id: 3, name: "LinkedIn", href: "https://www.linkedin.com/company/hexasynergy/", logo: <FaLinkedin /> },
 ];
 
 const Footer = () => {
@@ -36,6 +36,8 @@ const Footer = () => {
                     <a
                       key={`footer-social-4${item.id}`}
                       href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
                       className="mr-6 text-lg text-[#CED3F6] hover:text-primary"
                     >
                       {item.logo}
@@ -118,7 +120,7 @@ const Footer = () => {
                 <h2 className="mb-6 text-2xl font-bold text-black dark:text-white sm:mb-10">
                   Contact Info
                 </h2>
-                <ul className="mdCustom:px-[18%]">
+                <ul className="mdCustom:px-[10%]">
                   <li className="mb-4 flex items-center text-left text-base font-medium text-body-color">
                     <span className="text-lg text-primary">
                       <FiMail />
